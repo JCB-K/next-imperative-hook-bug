@@ -6,11 +6,7 @@ const Link = React.forwardRef((props, ref) => {
   return <a {...props} />;
 });
 
-const WrappedLinkComponent = ({ href, ...rest }) => (
-  <NextLink href={href}>
-    <Link href={href} {...rest} />
-  </NextLink>
-);
+const WrappedLinkComponent = (props) => <Link as={NextLink} {...props} />;
 
 export default function Home() {
   return <WrappedLinkComponent href="Somewhere">Click</WrappedLinkComponent>;
